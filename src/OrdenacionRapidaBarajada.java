@@ -4,16 +4,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 public class OrdenacionRapidaBarajada extends OrdenacionRapida {
-	
-	// Implementación de QuickSort con reordenación aleatoria inicial (para comparar tiempos experimentalmente)
+
+	// Implementaciï¿½n de QuickSort con reordenaciï¿½n aleatoria inicial (para comparar tiempos experimentalmente)
 	public static <T extends Comparable<? super T>> void ordenar(T v[]) {
-		// A completar por el alumno
+			T[] aux = v;
+			barajar(aux);
+			OrdenacionRapida.ordenar(aux);
     }
 
 	// reordena aleatoriamente los datos de un vector
     private static <T> void barajar(T v[]) {
-    	// A completar or el alumno
-    }	
-	
+			Random rnd = new Random();
+			for (int i = v.length-1;i > 0;i--) {
+				int indx = rmd.nextInt(i + 1);
+				int aux = v[indx];
+				v[indx] = v[i];
+				v[i] = aux;
+			}
+    }
+
 
 }
